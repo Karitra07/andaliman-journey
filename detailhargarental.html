@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Harga Rental Mobil - Andaliman Journey</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    nav {
+      background: #2c3e50;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #f39c12;
+      color: #2c3e50;
+    }
+
+    .header {
+      background: center/cover no-repeat;
+      color: #ffffff;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      background-image: url('your-header-background.jpg');
+    }
+
+    .header::after {
+      content: "";
+      background: rgba(44, 62, 80, 0.7);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    .header h1, .header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .header p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .intro-desc {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .paket {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fefefe;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      margin: 30px auto;
+      border-left: 6px solid #f39c12;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 900px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .paket:hover {
+      transform: scale(1.01);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .paket img {
+      flex: 1 1 300px;
+      max-width: 380px;
+      border-radius: 10px;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .paket-info {
+      flex: 1 1 300px;
+    }
+
+    .paket h3 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #f39c12;
+    }
+
+    .btn {
+      background: #f39c12;
+      color: #fff;
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 15px;
+      display: inline-block;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+      transform: scale(1.05);
+    }
+
+    #kontak {
+      padding: 50px 20px;
+      background: #f9f9f9;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    #kontak h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    #kontak p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    #kontak a {
+      color: #f39c12;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    .wa-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .wa-floating:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .paket {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 15px;
+      }
+
+      .paket img {
+        width: 100%;
+        height: auto;
+      }
+
+      .paket-info {
+        text-align: center;
+      }
+
+      .intro-desc {
+        font-size: 15px;
+        padding: 0 15px;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 10px 20px;
+      }
+
+      #kontak p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="detailpaketwisata.html">Paket Wisata</a>
+    <a href="detailhargarental.html">Harga Rental</a>
+    <a href="#kontak">Kontak Kami</a>
+  </nav>
+
+  <header class="header">
+    <h1>Detail Harga Rental Mobil</h1>
+    <p>Solusi Transportasi Nyaman dan Terjangkau di Medan bersama Andaliman Journey</p>
+  </header>
+
+  <div class="container">
+    <h2>Daftar Mobil Andaliman Journey</h2>
+    <p class="intro-desc">
+      Berikut adalah pilihan mobil yang tersedia untuk disewa. Semua unit dalam kondisi prima dan siap menemani perjalanan Anda dengan aman dan nyaman. Klik tombol <strong>"Sewa Sekarang"</strong> untuk langsung terhubung ke WhatsApp kami.
+    </p>
+
+    <!-- Daftar Mobil -->
+    <div class="paket" data-aos="fade-up">
+      <img src="avanza.PNG" alt="New Avanza">
+      <div class="paket-info">
+        <h3>New Avanza</h3>
+        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20New%20Avanza%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
+      </div>
+    </div>
+
+    <div class="paket" data-aos="fade-up">
+      <img src="avanzadeluxe.jpg" alt="Avanza Deluxe">
+      <div class="paket-info">
+        <h3>Avanza Deluxe</h3>
+        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Avanza%20Deluxe%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
+      </div>
+    </div>
+
+    <div class="paket" data-aos="fade-up">
+      <img src="innova.webp" alt="Innova Reborn">
+      <div class="paket-info">
+        <h3>Innova Reborn</h3>
+        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Innova%20Reborn%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
+      </div>
+    </div>
+
+    <div class="paket" data-aos="fade-up">
+      <img src="alphard.jpg" alt="Alphard">
+      <div class="paket-info">
+        <h3>Alphard</h3>
+        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Alphard%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
+      </div>
+    </div>
+
+    <div class="paket" data-aos="fade-up">
+      <img src="fortuner.webp" alt="Fortuner">
+      <div class="paket-info">
+        <h3>Fortuner</h3>
+        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Fortuner%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
+      </div>
+    </div>
+
+    <div class="paket" data-aos="fade-up">
+      <img src="hiace.PNG" alt="Hiace">
+      <div class="paket-info">
+        <h3>Hiace</h3>
+        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Hiace%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn">← Kembali ke Beranda</a>
+
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <p>📞 <a href="https://wa.me/6285763416675" target="_blank">0857-6341-6675</a></p>
+      <p>📧 Email: rentalmedanwisata@gmail.com</p>
+      <p>📍 Alamat: Jl. Gatot Subroto No. 45, Medan</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Andaliman Journey. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <a href="https://wa.me/6285763416675" class="wa-floating" target="_blank">💬 Chat Kami</a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true
+    });
+  </script>
+
+</body>
+</html>

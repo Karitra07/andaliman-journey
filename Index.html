@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Andaliman Journey - Rental Mobil & Paket Wisata Medan">
+  <meta property="og:description" content="Layanan wisata Danau Toba, Berastagi, Samosir. Armada lengkap & harga terjangkau.">
+  <meta property="og:url" content="https://www.andalimanjourney.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.andalimanjourney.com/images/og.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Andaliman Journey - Rental Mobil & Wisata Medan">
+  <meta name="twitter:description" content="Rental Mobil & Wisata Sumatera Utara: Danau Toba, Berastagi, Samosir. Armada terbaik & terpercaya.">
+  <meta name="twitter:image" content="https://www.andalimanjourney.com/images/og.jpg">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Andaliman Journey",
+    "image": "https://www.andalimanjourney.com/images/logo.png",
+    "@id": "https://www.andalimanjourney.com/",
+    "url": "https://www.andalimanjourney.com/",
+    "telephone": "+6285763416675",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Gatot Subroto No. 45",
+      "addressLocality": "Medan",
+      "addressRegion": "Sumatera Utara",
+      "postalCode": "20118",
+      "addressCountry": "ID"
+    },
+    "description": "Rental mobil dan paket wisata terpercaya di Medan. Spesialis Danau Toba, Berastagi, dan Samosir.",
+    "priceRange": "Rp350.000 - Rp1.200.000",
+    "openingHours": "Mo-Su 08:00-20:00"
+  }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andaliman Journey - Rental Mobil & Paket Wisata Medan</title>
+  <meta name="description" content="Andaliman Journey - Rental Mobil & Paket Wisata Medan. Layanan wisata Danau Toba, Berastagi, Samosir, dan sekitarnya. Armada lengkap, harga terjangkau.">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #2c3e50;
+    }
+
+    nav {
+      background: #2c3e50;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #f39c12;
+      color: #2c3e50;
+    }
+
+    .hero {
+      position: relative;
+      background: url('ChatGPT Image Jun 23, 2025 at 12_20_03 PM.png') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .hero a {
+      background: #f39c12;
+      color: #2c3e50;
+      padding: 12px 28px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .hero a:hover {
+      background: #e67e22;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      background: #f39c12;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin: 10px;
+      transition: background 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #e67e22;
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 50px 0;
+      padding: 0 10px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease both;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #kontak {
+      background: #fefefe;
+      padding: 60px 20px;
+    }
+
+    #kontak h2 {
+      font-size: 30px;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    #kontak p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    #kontak a {
+      color: #f39c12;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: #25D366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50%;
+      font-size: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      text-decoration: none;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        height: 80vh;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero a {
+        font-size: 14px;
+        padding: 10px 20px;
+        margin: 5px;
+      }
+
+      .container {
+        margin: 30px auto;
+        padding: 15px;
+      }
+
+      .intro p {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .gallery-item img {
+        height: 200px;
+      }
+
+      #kontak h2 {
+        font-size: 24px;
+      }
+
+      #kontak p {
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        margin: 6px;
+      }
+
+      footer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="detailpaketwisata.html">Paket Wisata</a>
+    <a href="detailhargarental.html">Harga Rental</a>
+    <a href="#kontak">Kontak Kami</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Andaliman Journey</h1>
+      <p>Rental Mobil & Paket Wisata Medan - Temani Perjalanan Anda Jelajahi Sumatera Utara</p>
+      <a href="#layanan" class="btn">Lihat Layanan</a>
+      <a href="#kontak" class="btn">Kontak Kami</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="layanan" class="intro" data-aos="fade-up">
+      <h2>Tentang Kami & Layanan</h2>
+      <p>Andaliman Journey adalah pilihan tepat untuk Anda yang ingin menjelajahi Medan dan Sumatera Utara dengan aman dan nyaman. Kami menyediakan rental mobil serta paket wisata ke berbagai destinasi populer seperti Danau Toba, Samosir, Berastagi, dan lainnya. Layanan profesional, harga terjangkau, dan armada terpercaya!</p>
+      <a href="detailpaketwisata.html" class="btn">Detail Paket Wisata</a>
+      <a href="detailhargarental.html" class="btn">Detail Harga Rental</a>
+    </section>
+
+    <section id="paket" class="gallery">
+      <div class="gallery-item" data-aos="zoom-in"><img src="fotodanautoba.jpg" alt="Danau Toba"></div>
+      <div class="gallery-item" data-aos="zoom-in"><img src="fotoberastagi.png" alt="Berastagi"></div>
+      <div class="gallery-item" data-aos="zoom-in"><img src="fotomedan.jpeg" alt="Kota Medan"></div>
+      <div class="gallery-item" data-aos="zoom-in"><img src="fotosamosir.jpg" alt="Samosir Island"></div>
+    </section>
+
+    <section id="testimoni">
+      <h2 data-aos="fade-up">Apa Kata Mereka?</h2>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;" data-aos="fade-up">
+        <div style="max-width:300px;background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <p>"Pelayanan ramah, mobil bersih, dan tepat waktu. Sangat recommended!"</p>
+          <strong>– Dinda, Jakarta</strong>
+        </div>
+        <div style="max-width:300px;background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+          <p>"Sopirnya sopan dan berpengalaman. Perjalanan ke Danau Toba jadi lebih nyaman!"</p>
+          <strong>– Budi, Surabaya</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <p>📞 <a href="https://wa.me/6285763416675" target="_blank">0857-6341-6675</a></p>
+      <p>📧 Email: rentalmedanwisata@gmail.com</p>
+      <p>📍 Alamat: Jl. Gatot Subroto No. 45, Medan</p>
+    </section>
+  </div>
+
+  <a href="https://wa.me/6285763416675" target="_blank" class="whatsapp-float" title="Hubungi via WhatsApp">💬</a>
+
+  <footer>
+    <p>&copy; 2025 Andaliman Journey. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
