@@ -40,36 +40,60 @@
       color: #2c3e50;
     }
 
-    .header {
-      background: center/cover no-repeat;
-      text-align: center;
-      padding: 80px 20px;
-      position: relative;
-      color: #fff;
-    }
+.header {
+  background: center/cover no-repeat;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 1.5s ease;
+}
 
-    .header::after {
-      content: "";
-      background: rgba(44, 62, 80, 0.75);
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
+.header::after {
+  content: "";
+  background: linear-gradient(to bottom, rgba(44,62,80,0.7), rgba(44,62,80,0.9));
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
 
-    .header h1, .header p {
-      position: relative;
-      z-index: 1;
-    }
+.header .overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
 
-    .header h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .header p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+.header h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: slideDown 1s ease;
+}
+
+.header p {
+  font-size: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
     .container {
       max-width: 1200px;
@@ -200,16 +224,20 @@
     <a href="#kontak">Kontak Kami</a>
   </nav>
 
-  <header class="header">
+  <header class="header" style="background-image: url('laketoba3.jpg');">
+  <div class="overlay"></div>
+  <div class="header-content">
     <h1>Paket Wisata Kami</h1>
-    <p>Jelajahi destinasi terbaik bersama Andaliman Journey</p>
-  </header>
+    <p>Jelajahi destinasi terbaik bersama <strong>Andaliman Journey</strong></p>
+  </div>
+</header>
+
 
   <div class="container">
     <div class="gallery">
       <!-- Semua card kamu mulai dari sini -->
       <div class="card"><img src="fotodanautoba.jpg" alt="Danau Toba"><h3>Danau Toba (5 Hari 4 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%285%20Hari%204%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotodanautoba2.jpg" alt="Danau Toba"><h3>Danau Toba (4 Hari 3 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%284%20Hari%203%20Malam%29.">Sewa Sekarang</a></div>
+      <div class="card"><img src="laketoba2.jpg" alt="Danau Toba"><h3>Danau Toba (4 Hari 3 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%284%20Hari%203%20Malam%29.">Sewa Sekarang</a></div>
       <div class="card"><img src="fotodanautoba3.webp" alt="Danau Toba"><h3>Danau Toba (3 Hari 2 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%283%20Hari%202%20Malam%29.">Sewa Sekarang</a></div>
       <div class="card"><img src="fotosamosir.jpg" alt="Samosir"><h3>Samosir One Day Trip</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Samosir%20One%20Day%20Trip.">Sewa Sekarang</a></div>
       <div class="card"><img src="fotoberastagi.png" alt="Berastagi"><h3>Berastagi One Day Trip</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Berastagi%20One%20Day%20Trip.">Sewa Sekarang</a></div>
@@ -236,3 +264,4 @@
 
 </body>
 </html>
+
