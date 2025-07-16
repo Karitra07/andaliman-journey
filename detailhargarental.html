@@ -6,9 +6,7 @@
   <title>Detail Harga Rental Mobil - Andaliman Journey</title>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -26,23 +24,21 @@
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .nav-container {
       display: flex;
-      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
       width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     .nav-links {
       display: flex;
       gap: 20px;
-      justify-content: center;
     }
 
     nav a {
@@ -63,7 +59,6 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
-      margin-left: auto;
     }
 
     .menu-toggle div {
@@ -71,6 +66,33 @@
       height: 3px;
       background: #fff;
       margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     .header {
@@ -138,7 +160,6 @@
       margin: 30px auto;
       border-left: 6px solid #f39c12;
       align-items: center;
-      justify-content: space-between;
       gap: 20px;
       max-width: 900px;
       flex-direction: column;
@@ -148,7 +169,6 @@
     .paket img {
       width: 100%;
       max-width: 100%;
-      height: auto;
       border-radius: 10px;
       object-fit: cover;
       aspect-ratio: 16/9;
@@ -235,55 +255,15 @@
       Berikut adalah pilihan mobil yang tersedia untuk disewa. Semua unit dalam kondisi prima dan siap menemani perjalanan Anda dengan aman dan nyaman. Klik tombol <strong>"Sewa Sekarang"</strong> untuk langsung terhubung ke WhatsApp kami.
     </p>
 
-    <!-- Gunakan format .paket seperti sebelumnya untuk semua mobil -->
-    <div class="paket" data-aos="fade-up">
-      <img src="avanza.PNG" alt="New Avanza">
-      <div class="paket-info">
-        <h3>New Avanza</h3>
-        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20New%20Avanza%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
-      </div>
-    </div>
+    <!-- Daftar Mobil -->
+    <div class="paket" data-aos="fade-up"><img src="avanza.PNG"><div class="paket-info"><h3>New Avanza</h3><a href="https://wa.me/6285763416675?text=Sewa%20New%20Avanza" class="btn" target="_blank">Sewa Sekarang</a></div></div>
+    <div class="paket" data-aos="fade-up"><img src="avanzadeluxe.png"><div class="paket-info"><h3>Avanza Deluxe</h3><a href="https://wa.me/6285763416675?text=Sewa%20Avanza%20Deluxe" class="btn" target="_blank">Sewa Sekarang</a></div></div>
+    <div class="paket" data-aos="fade-up"><img src="innova.webp"><div class="paket-info"><h3>Innova Reborn</h3><a href="https://wa.me/6285763416675?text=Sewa%20Innova%20Reborn" class="btn" target="_blank">Sewa Sekarang</a></div></div>
+    <div class="paket" data-aos="fade-up"><img src="alphard.jpg"><div class="paket-info"><h3>Alphard</h3><a href="https://wa.me/6285763416675?text=Sewa%20Alphard" class="btn" target="_blank">Sewa Sekarang</a></div></div>
+    <div class="paket" data-aos="fade-up"><img src="fortuner.webp"><div class="paket-info"><h3>Fortuner</h3><a href="https://wa.me/6285763416675?text=Sewa%20Fortuner" class="btn" target="_blank">Sewa Sekarang</a></div></div>
+    <div class="paket" data-aos="fade-up"><img src="hiace.PNG"><div class="paket-info"><h3>Hiace</h3><a href="https://wa.me/6285763416675?text=Sewa%20Hiace" class="btn" target="_blank">Sewa Sekarang</a></div></div>
 
-    <div class="paket" data-aos="fade-up">
-      <img src="avanzadeluxe.png" alt="Avanza Deluxe">
-      <div class="paket-info">
-        <h3>Avanza Deluxe</h3>
-        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Avanza%20Deluxe%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
-      </div>
-    </div>
-
-    <div class="paket" data-aos="fade-up">
-      <img src="innova.webp" alt="Innova Reborn">
-      <div class="paket-info">
-        <h3>Innova Reborn</h3>
-        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Innova%20Reborn%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
-      </div>
-    </div>
-
-    <div class="paket" data-aos="fade-up">
-      <img src="alphard.jpg" alt="Alphard">
-      <div class="paket-info">
-        <h3>Alphard</h3>
-        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Alphard%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
-      </div>
-    </div>
-
-    <div class="paket" data-aos="fade-up">
-      <img src="fortuner.webp" alt="Fortuner">
-      <div class="paket-info">
-        <h3>Fortuner</h3>
-        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Fortuner%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
-      </div>
-    </div>
-
-    <div class="paket" data-aos="fade-up">
-      <img src="hiace.PNG" alt="Hiace">
-      <div class="paket-info">
-        <h3>Hiace</h3>
-        <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Hiace%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
-      </div>
-    </div>
-
+    <!-- Kontak -->
     <section id="kontak">
       <h2>Kontak Kami</h2>
       <p>📞 <a href="https://wa.me/6285763416675" target="_blank">0857-6341-6675</a></p>
