@@ -6,6 +6,10 @@
   <title>Detail Harga Rental Mobil - Andaliman Journey</title>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #ffffff;
@@ -67,39 +71,6 @@
       height: 3px;
       background: #fff;
       margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        margin-top: 10px;
-        justify-content: flex-start;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav a {
-        padding: 10px;
-      }
     }
 
     .header {
@@ -170,18 +141,21 @@
       justify-content: space-between;
       gap: 20px;
       max-width: 900px;
+      flex-direction: column;
+      text-align: center;
     }
 
     .paket img {
-      flex: 1 1 300px;
-      max-width: 380px;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
       border-radius: 10px;
       object-fit: cover;
       aspect-ratio: 16/9;
     }
 
     .paket-info {
-      flex: 1 1 300px;
+      width: 100%;
     }
 
     .paket h3 {
@@ -260,7 +234,8 @@
     <p class="intro-desc">
       Berikut adalah pilihan mobil yang tersedia untuk disewa. Semua unit dalam kondisi prima dan siap menemani perjalanan Anda dengan aman dan nyaman. Klik tombol <strong>"Sewa Sekarang"</strong> untuk langsung terhubung ke WhatsApp kami.
     </p>
-<!-- Daftar Mobil -->
+
+    <!-- Gunakan format .paket seperti sebelumnya untuk semua mobil -->
     <div class="paket" data-aos="fade-up">
       <img src="avanza.PNG" alt="New Avanza">
       <div class="paket-info">
@@ -308,8 +283,6 @@
         <a href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20untuk%20menyewa%20mobil%20Hiace%20dari%20Andaliman%20Journey." class="btn" target="_blank">Sewa Sekarang</a>
       </div>
     </div>
-    <!-- Daftar mobil disisipkan di sini... -->
-    <!-- [Kamu bisa lanjutkan bagian daftar mobil seperti sebelumnya] -->
 
     <section id="kontak">
       <h2>Kontak Kami</h2>
