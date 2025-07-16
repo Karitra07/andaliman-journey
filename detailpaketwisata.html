@@ -15,15 +15,22 @@
 
     nav {
       background: #2c3e50;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 100;
-      flex-wrap: wrap;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex: 1;
     }
 
     nav a {
@@ -40,63 +47,102 @@
       color: #2c3e50;
     }
 
-.header {
-  background: center/cover no-repeat;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-  color: #fff;
-  background-size: cover;
-  background-position: center;
-  animation: fadeIn 1.5s ease;
-}
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-.header::after {
-  content: "";
-  background: linear-gradient(to bottom, rgba(44,62,80,0.7), rgba(44,62,80,0.9));
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 1;
-}
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
 
-.header .overlay {
-  background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 1;
-}
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+      }
 
-.header-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
-}
+      .nav-links.show {
+        display: flex;
+      }
 
-.header h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-  animation: slideDown 1s ease;
-}
+      .menu-toggle {
+        display: flex;
+      }
 
-.header p {
-  font-size: 20px;
-  animation: fadeIn 1.5s ease;
-}
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      nav a {
+        padding: 10px;
+      }
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+    .header {
+      background: center/cover no-repeat;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .header::after {
+      content: "";
+      background: linear-gradient(to bottom, rgba(44,62,80,0.7), rgba(44,62,80,0.9));
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+    }
+
+    .header .overlay {
+      background: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      animation: slideDown 1s ease;
+    }
+
+    .header p {
+      font-size: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 20px;
     }
@@ -180,81 +226,54 @@
       margin-top: 40px;
       font-size: 14px;
     }
-
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 32px;
-      }
-
-      .header p {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-
-      .card h3 {
-        font-size: 16px;
-      }
-
-      .btn-wa {
-        font-size: 15px;
-        padding: 10px 18px;
-      }
-
-      #kontak h2 {
-        font-size: 26px;
-      }
-
-      #kontak p {
-        font-size: 15px;
-      }
-
-      footer {
-        font-size: 13px;
-        padding: 15px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html">Beranda</a>
-    <a href="detailpaketwisata.html">Paket Wisata</a>
-    <a href="detailhargarental.html">Harga Rental</a>
-    <a href="#kontak">Kontak Kami</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Beranda</a>
+      <a href="detailpaketwisata.html">Paket Wisata</a>
+      <a href="detailhargarental.html">Harga Rental</a>
+      <a href="#kontak">Kontak Kami</a>
+    </div>
   </nav>
 
   <header class="header" style="background-image: url('laketoba3.jpg');">
-  <div class="overlay"></div>
-  <div class="header-content">
-    <h1>Paket Wisata Kami</h1>
-    <p>Jelajahi destinasi terbaik bersama <strong>Andaliman Journey</strong></p>
-  </div>
-</header>
-
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>Paket Wisata Kami</h1>
+      <p>Jelajahi destinasi terbaik bersama <strong>Andaliman Journey</strong></p>
+    </div>
+  </header>
 
   <div class="container">
     <div class="gallery">
-      <!-- Semua card kamu mulai dari sini -->
-      <div class="card"><img src="fotodanautoba.jpg" alt="Danau Toba"><h3>Danau Toba (5 Hari 4 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%285%20Hari%204%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="laketoba2.jpg" alt="Danau Toba"><h3>Danau Toba (4 Hari 3 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%284%20Hari%203%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotodanautoba3.webp" alt="Danau Toba"><h3>Danau Toba (3 Hari 2 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%283%20Hari%202%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotosamosir.jpg" alt="Samosir"><h3>Samosir One Day Trip</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Samosir%20One%20Day%20Trip.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotoberastagi.png" alt="Berastagi"><h3>Berastagi One Day Trip</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Berastagi%20One%20Day%20Trip.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotomedan.jpeg" alt="Medan"><h3>Medan One Day Trip</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Medan%20One%20Day%20Trip.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotomursala.jpg" alt="Mursala"><h3>Mursala Trip (3 Hari 2 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Mursala%20Trip%20%283%20Hari%202%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotosabang.jpg" alt="Sabang"><h3>Sabang Trip (5 Hari 4 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Sabang%20Trip%20%285%20Hari%204%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotosabang2.jpg" alt="Sabang"><h3>Sabang Trip (4 Hari 3 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Sabang%20Trip%20%284%20Hari%203%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="fotosabang3.jpg" alt="Sabang"><h3>Sabang Trip (3 Hari 2 Malam)</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Sabang%20Trip%20%283%20Hari%202%20Malam%29.">Sewa Sekarang</a></div>
-      <div class="card"><img src="honeymoon.jpg" alt="Honeymoon"><h3>Paket Honeymoon</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Honeymoon.">Sewa Sekarang</a></div>
-      <div class="card"><img src="companytrip.jpeg" alt="Company Trip"><h3>Paket Company Trip</h3><a class="btn-wa" target="_blank" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Company%20Trip.">Sewa Sekarang</a></div>
+      <!-- Semua card paket wisata -->
+      <div class="card"><img src="fotodanautoba.jpg" alt="Danau Toba"><h3>Danau Toba (5 Hari 4 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%285%20Hari%204%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="laketoba2.jpg" alt="Danau Toba"><h3>Danau Toba (4 Hari 3 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%284%20Hari%203%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotodanautoba3.webp" alt="Danau Toba"><h3>Danau Toba (3 Hari 2 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Danau%20Toba%20%283%20Hari%202%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotosamosir.jpg" alt="Samosir"><h3>Samosir One Day Trip</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Samosir%20One%20Day%20Trip." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotoberastagi.png" alt="Berastagi"><h3>Berastagi One Day Trip</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Berastagi%20One%20Day%20Trip." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotomedan.jpeg" alt="Medan"><h3>Medan One Day Trip</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Medan%20One%20Day%20Trip." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotomursala.jpg" alt="Mursala"><h3>Mursala Trip (3 Hari 2 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Mursala%20Trip%20%283%20Hari%202%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotosabang.jpg" alt="Sabang"><h3>Sabang Trip (5 Hari 4 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Sabang%20Trip%20%285%20Hari%204%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotosabang2.jpg" alt="Sabang"><h3>Sabang Trip (4 Hari 3 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Sabang%20Trip%20%284%20Hari%203%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="fotosabang3.jpg" alt="Sabang"><h3>Sabang Trip (3 Hari 2 Malam)</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Sabang%20Trip%20%283%20Hari%202%20Malam%29." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="honeymoon.jpg" alt="Honeymoon"><h3>Paket Honeymoon</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Honeymoon." target="_blank">Sewa Sekarang</a></div>
+      <div class="card"><img src="companytrip.jpeg" alt="Company Trip"><h3>Paket Company Trip</h3><a class="btn-wa" href="https://wa.me/6285763416675?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20Company%20Trip." target="_blank">Sewa Sekarang</a></div>
     </div>
 
     <section id="kontak">
       <h2>Kontak Kami</h2>
       <p>📞 <a href="https://wa.me/6285763416675" target="_blank">0857-6341-6675</a></p>
-      <p>📧 Email: andalimanjourney.com</p>
-      <p>📍 Alamat: Jl. Tangguk Bongkar III, Medan, Sumatra Utara</p>
+      <p>📧 Email: andalimanjourney@gmail.com</p>
+      <p>📍 Alamat: Jl. Tangguk Bongkar III, Medan, Sumatra</p>
     </section>
   </div>
 
@@ -262,6 +281,10 @@
     <p>&copy; 2025 Andaliman Journey. Semua Hak Dilindungi.</p>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
-
