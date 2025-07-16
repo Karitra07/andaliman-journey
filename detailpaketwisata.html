@@ -21,7 +21,7 @@
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -30,7 +30,7 @@
       display: flex;
       gap: 25px;
       justify-content: center;
-      flex: 1;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -61,11 +61,17 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .nav-links {
         display: none;
         width: 100%;
         flex-direction: column;
         margin-top: 10px;
+        justify-content: flex-start;
       }
 
       .nav-links.show {
@@ -74,11 +80,7 @@
 
       .menu-toggle {
         display: flex;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
+        margin-left: auto;
       }
 
       nav a {
@@ -226,6 +228,20 @@
       margin-top: 40px;
       font-size: 14px;
     }
+
+    .wa-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 999;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -280,6 +296,8 @@
   <footer>
     <p>&copy; 2025 Andaliman Journey. Semua Hak Dilindungi.</p>
   </footer>
+
+  <a href="https://wa.me/6285763416675" class="wa-floating" target="_blank">💬 Chat Kami</a>
 
   <script>
     function toggleMenu() {
