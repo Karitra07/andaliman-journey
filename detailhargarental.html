@@ -24,7 +24,7 @@
       z-index: 100;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
     }
 
@@ -33,12 +33,14 @@
       align-items: center;
       width: 100%;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
     }
 
     .nav-links {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
@@ -68,44 +70,32 @@
       margin: 4px 0;
     }
 
-   .nav-links {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-start; /* default: kiri */
-  flex-wrap: wrap;
-}
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-/* NAVBAR DI TENGAH SAAT DESKTOP */
-@media (min-width: 769px) {
-  .nav-links {
-    justify-content: center;
-  }
-}
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+      }
 
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+      .nav-links.show {
+        display: flex;
+      }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
       }
     }
 
@@ -303,3 +293,4 @@
   </script>
 </body>
 </html>
+
