@@ -238,6 +238,62 @@
       text-align: center;
       text-decoration: none;
     }
+   .testimoni-section {
+  padding: 60px 20px;
+  background: #f7f9fc;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-weight: 600;
+}
+
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.testimoni-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.testimoni-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimoni-card p {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimoni-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimoni-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.testimoni-author span {
+  font-weight: 600;
+  color: #333;
+}
 
     @media (max-width: 768px) {
       .menu-toggle {
@@ -268,6 +324,10 @@
       .brand img {
         height: 70px;
       }
+
+      .testimonial {
+    flex: 1 1 100%;
+  }
     }
   </style>
 </head>
@@ -322,6 +382,56 @@
       <div class="gallery-item"><img src="laketoba2.jpg" alt="Samosir Island"></div>
       <div class="gallery-item"><img src="laketoba3.jpg" alt="Samosir Island"></div>
     </section>
+
+<section id="testimoni" class="testimoni-section">
+  <div class="container">
+    <h2 class="section-title">Apa Kata Mereka?</h2>
+    <div class="testimoni-grid">
+      <div class="testimoni-card">
+        <p>"Perjalanan ke Danau Toba sangat menyenangkan! Supir ramah dan mobilnya bersih."</p>
+        <div class="testimoni-author">
+          <img src="https://i.pravatar.cc/60?img=1" alt="Sarah">
+          <span>Sarah – Jakarta</span>
+        </div>
+      </div>
+      <div class="testimoni-card">
+        <p>"Sangat puas! Andaliman Journey membantu kami menjelajah Medan tanpa ribet."</p>
+        <div class="testimoni-author">
+          <img src="https://i.pravatar.cc/60?img=2" alt="Daniel">
+          <span>Daniel – Surabaya</span>
+        </div>
+      </div>
+      <div class="testimoni-card">
+        <p>"Booking mudah, layanan cepat, dan semua sesuai ekspektasi. Highly recommended!"</p>
+        <div class="testimoni-author">
+          <img src="https://i.pravatar.cc/60?img=3" alt="Mia">
+          <span>Mia – Bali</span>
+        </div>
+      </div>
+      <div class="testimoni-card">
+        <p>"Rute wisatanya oke banget. Terima kasih Andaliman Journey atas pengalamannya!"</p>
+        <div class="testimoni-author">
+          <img src="https://i.pravatar.cc/60?img=4" alt="Thomas">
+          <span>Thomas – Kuala Lumpur</span>
+        </div>
+      </div>
+      <div class="testimoni-card">
+        <p>"Kami sekeluarga sangat menikmati liburan ini. Profesional dan ramah semua timnya."</p>
+        <div class="testimoni-author">
+          <img src="https://i.pravatar.cc/60?img=5" alt="Lestari">
+          <span>Lestari – Medan</span>
+        </div>
+      </div>
+      <div class="testimoni-card">
+        <p>"Pelayanan Andaliman Journey sangat memuaskan, semuanya terorganisir dengan baik."</p>
+        <div class="testimoni-author">
+          <img src="https://i.pravatar.cc/60?img=6" alt="Yusuf">
+          <span>Yusuf – Bandung</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="kontak">
       <h2>Kontak Kami</h2>
